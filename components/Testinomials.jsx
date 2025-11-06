@@ -104,18 +104,19 @@ export default function Testimonials() {
         alt=""
         className="absolute left-0 w-[70px] h-[70px]"
       />
-      <div className="relative flex items-center justify-center max-w-6xl mx-auto px-4 mb-12 pt-16">
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-center">
+      <div className="relative flex flex-col lg:flex-row items-center max-w-6xl mx-auto px-4 mb-8 pt-12">
+        {/* Text */}
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-center flex-1">
           <span className="text-white uppercase tracking-wider">
             Testimonials
           </span>
         </h2>
 
-        {/* Image on the right */}
+        {/* Image */}
         <img
           src="/assets/testimonials.png"
           alt="testimonials"
-          className="absolute right-10 lg:right-0 w-28 object-cover rounded-2xl"
+          className="w-28 sm:w-36 mt-6 lg:mt-0 lg:ml-auto rounded-2xl"
         />
       </div>
 
