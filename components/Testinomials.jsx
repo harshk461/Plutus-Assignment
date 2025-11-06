@@ -146,7 +146,7 @@ export default function Testimonials() {
           onScroll={checkScroll}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-12"
+          className="flex gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth px-12"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {cardData.map((item, index) => (
@@ -179,19 +179,20 @@ const TestimonialCard = ({
   return (
     <div
       className="relative flex flex-col gap-4 min-w-[450px] w-[450px] p-4 rounded-lg border-[1px] border-[#FFFFFF1F]
-    bg-[linear-gradient(90deg,_rgba(135,0,117,0.63)_-76.84%,_rgba(16,1,52,0.63)_110.8%)]"
+      bg-[linear-gradient(90deg,_rgba(135,0,117,0.63)_-76.84%,_rgba(16,1,52,0.63)_110.8%)]
+      h-[200px]" // fixed height
     >
       <img
         src="/assets/plutusLogo.png"
         alt=""
         className={
-          index % 2 == 0
+          index % 2 === 0
             ? `absolute top-0 left-0 w-[250px]`
             : `absolute bottom-0 right-0 w-[250px] -scale-x-100`
         }
       />
       <div className="flex justify-between items-start">
-        <div>
+        <div className="flex-1">
           <p className="text-lg text-white font-semibold">{summary}</p>
           <div className="flex gap-2">
             <div className="flex gap-1">
@@ -212,11 +213,10 @@ const TestimonialCard = ({
           <p>{date}</p>
         </div>
       </div>
-      <div>
-        <p className="text-[12px] text-white mt-6">{reviewText}</p>
+      <div className="flex-1 overflow-hidden">
+        <p className="text-[12px] text-white">{reviewText}</p>
       </div>
       <div className="flex items-end justify-end">
-        {/* <Apple color="white" /> */}
         <img src="/assets/appleLogo.svg" alt="" />
       </div>
     </div>
