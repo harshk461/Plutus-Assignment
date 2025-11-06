@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <footer className="bg-[linear-gradient(270deg,_#100134_0%,_#870075_161.11%)] text-white font-inter rounded-t-[64px]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 py-12">
+      <div className="max-w-[95%] mx-auto px-6 sm:px-12 py-12">
         {/* Top Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start mb-8 gap-8 lg:gap-0">
           {/* Logo Section */}
@@ -83,7 +83,7 @@ export default function Footer() {
                 />
                 <img
                   src="/assets/konvoy.svg"
-                  className="w-16 sm:w-20 h-auto"
+                  className="w-16 sm:w-12 h-auto"
                   alt="Konvoy"
                 />
               </div>
@@ -94,8 +94,9 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-white/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
           <p className="text-gray-300 text-sm">© 2025 Plutus Labs, Inc.</p>
-          <p className="text-gray-300 text-sm">
-            1209 Orange Street, Wilmington, <br className="md:hidden" />{" "}
+          <p className="text-gray-300 text-sm text-center md:text-end">
+            1209 Orange Street, Wilmington,
+            <br />
             Delaware, USA, 19801
           </p>
         </div>

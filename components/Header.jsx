@@ -27,7 +27,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-[#0A071E] shadow-xl w-full sticky top-0 z-50">
+    <header className="bg-[#000] shadow-xl w-full absolute top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 md:w-40">
@@ -51,7 +51,7 @@ export default function Header() {
             <button
               onClick={toggleMenu}
               type="button"
-              className="md:hidden p-2 text-gray-400 rounded-lg hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 transition duration-150 ease-in-out"
+              className="md:hidden p-2 text-gray-400 rounded-lg hover:text-white transition duration-150 ease-in-out"
               aria-controls="mobile-menu"
               aria-expanded={isOpen}
             >
@@ -77,7 +77,7 @@ export default function Header() {
         }`}
         id="mobile-menu"
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#0E0B25] text-gray-300">
+        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#000] text-gray-300">
           {navItems.map((item) => (
             <a
               key={item.name}

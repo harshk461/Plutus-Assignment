@@ -68,24 +68,24 @@ export default function Testimonials() {
   }, []);
 
   // Auto-scroll carousel
-  useEffect(() => {
-    if (isPaused) return;
+  // useEffect(() => {
+  //   if (isPaused) return;
 
-    const el = scrollRef.current;
-    if (!el) return;
+  //   const el = scrollRef.current;
+  //   if (!el) return;
 
-    const cardWidth = 450 + 16; // card width + gap
-    const interval = setInterval(() => {
-      if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 10) {
-        // Reset to start smoothly
-        el.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        el.scrollBy({ left: cardWidth, behavior: "smooth" });
-      }
-    }, 3000);
+  //   const cardWidth = 450 + 16; // card width + gap
+  //   const interval = setInterval(() => {
+  //     if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 10) {
+  //       // Reset to start smoothly
+  //       el.scrollTo({ left: 0, behavior: "smooth" });
+  //     } else {
+  //       el.scrollBy({ left: cardWidth, behavior: "smooth" });
+  //     }
+  //   }, 3000);
 
-    return () => clearInterval(interval);
-  }, [isPaused]);
+  //   return () => clearInterval(interval);
+  // }, [isPaused]);
 
   const scroll = (direction) => {
     const el = scrollRef.current;
@@ -125,19 +125,24 @@ export default function Testimonials() {
         <button
           onClick={() => scroll("left")}
           disabled={!canScrollLeft}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed p-2 rounded-full transition-all"
-          aria-label="Previous testimonial"
+          className={`absolute top-1/2 left-0 transform -translate-y-1/2 p-3 rounded-full bg-[#22222266] text-white backdrop-blur-[9.2px] z-10 ${
+            canScrollLeft ? "opacity-100" : "opacity-0 cursor-default"
+          } `}
+          aria-label="Scroll left"
         >
-          <ChevronLeft className="w-6 h-6 text-white" />
+          <ChevronLeft className="w-6 h-6" />
         </button>
 
+        {/* Right Arrow Button */}
         <button
           onClick={() => scroll("right")}
           disabled={!canScrollRight}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/10 hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed p-2 rounded-full transition-all"
-          aria-label="Next testimonial"
+          className={`absolute top-1/2 right-0 transform -translate-y-1/2 p-3 rounded-full bg-[#22222266] text-white backdrop-blur-[9.2px] z-10 ${
+            canScrollRight ? "opacity-100" : "opacity-0 cursor-default"
+          } `}
+          aria-label="Scroll right"
         >
-          <ChevronRight className="w-6 h-6 text-white" />
+          <ChevronRight className="w-6 h-6" />
         </button>
 
         {/* Carousel Container */}
@@ -146,7 +151,7 @@ export default function Testimonials() {
           onScroll={checkScroll}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="flex gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth px-12"
+          className="flex gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide scroll-smooth"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {cardData.map((item, index) => (
@@ -178,9 +183,8 @@ const TestimonialCard = ({
 
   return (
     <div
-      className="relative flex flex-col gap-4 min-w-[320px] w-[450px] p-4 rounded-lg border-[1px] border-[#FFFFFF1F]
-      bg-[linear-gradient(90deg,_rgba(135,0,117,0.63)_-76.84%,_rgba(16,1,52,0.63)_110.8%)]
-      h-auto" // fixed height
+      className="relative flex flex-col gap-4 min-w-[320px] w-[320px] sm:w-[500px] flex-shrink-0 p-4 rounded-[24px] border-[1px] border-[#FFFFFF1F]
+    bg-[linear-gradient(90deg,_rgba(135,0,117,0.63)_-76.84%,_rgba(16,1,52,0.63)_110.8%)] h-auto"
     >
       <img
         src="/assets/plutusLogo.png"

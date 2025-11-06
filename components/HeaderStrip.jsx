@@ -39,7 +39,8 @@ export default function HeaderStrip() {
   return (
     <section className="bg-[linear-gradient(90deg,_#870075_-76.84%,_#100134_110.8%)] py-10 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+        {/* Container */}
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6 sm:gap-10 md:gap-16 flex-wrap">
           {featuresData.map((feature, index) => (
             <React.Fragment key={index}>
               <FeatureItem
@@ -50,10 +51,10 @@ export default function HeaderStrip() {
               {/* Divider */}
               {index < featuresData.length - 1 && (
                 <>
-                  {/* Vertical divider for desktop */}
+                  {/* Vertical divider for tablet/desktop */}
                   <div className="hidden md:block w-px h-24 bg-[#FF69EB]" />
                   {/* Horizontal divider for mobile */}
-                  <div className="block md:hidden w-1/2 h-px bg-[#FF69EB]" />
+                  <div className="block md:hidden w-1/2 h-px bg-[#FF69EB] my-4" />
                 </>
               )}
             </React.Fragment>

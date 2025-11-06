@@ -11,7 +11,7 @@ import React from "react";
 
 export default function HomePage() {
   return (
-    <div className="w-full flex flex-col">
+    <div className="relative w-full flex flex-col">
       <Header />
       <Homepage />
       <HeaderStrip />

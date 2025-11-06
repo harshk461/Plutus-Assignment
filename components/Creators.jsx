@@ -131,9 +131,9 @@ export default function Creators() {
           <button
             onClick={() => scroll("left")}
             disabled={!canScrollLeft}
-            className={`absolute top-1/2 left-0 transform -translate-y-1/2 p-2 rounded-full bg-white/10 hover:bg-white/40 text-white transition-opacity duration-300 z-10 ${
+            className={`absolute top-1/2 left-0 transform -translate-y-1/2 p-3 rounded-full bg-[#22222266] text-white backdrop-blur-[9.2px] z-10 ${
               canScrollLeft ? "opacity-100" : "opacity-0 cursor-default"
-            } hidden sm:block`}
+            } `}
             aria-label="Scroll left"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -143,9 +143,9 @@ export default function Creators() {
           <button
             onClick={() => scroll("right")}
             disabled={!canScrollRight}
-            className={`absolute top-1/2 right-0 transform -translate-y-1/2 p-2 rounded-full bg-white/10 hover:bg-white/40 text-white transition-opacity duration-300 z-10 ${
+            className={`absolute top-1/2 right-0 transform -translate-y-1/2 p-3 rounded-full bg-[#22222266] text-white backdrop-blur-[9.2px] z-10 ${
               canScrollRight ? "opacity-100" : "opacity-0 cursor-default"
-            } hidden sm:block`}
+            } `}
             aria-label="Scroll right"
           >
             <ChevronRight className="w-6 h-6" />
