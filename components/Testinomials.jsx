@@ -178,9 +178,9 @@ const TestimonialCard = ({
 
   return (
     <div
-      className="relative flex flex-col gap-4 min-w-[450px] w-[450px] p-4 rounded-lg border-[1px] border-[#FFFFFF1F]
+      className="relative flex flex-col gap-4 min-w-[320px] w-[450px] p-4 rounded-lg border-[1px] border-[#FFFFFF1F]
       bg-[linear-gradient(90deg,_rgba(135,0,117,0.63)_-76.84%,_rgba(16,1,52,0.63)_110.8%)]
-      h-[200px]" // fixed height
+      h-auto" // fixed height
     >
       <img
         src="/assets/plutusLogo.png"
